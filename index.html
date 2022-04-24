@@ -7,42 +7,49 @@
 <body>
 
 
-</div>
-<table id="taulukko"></table>
 
-<table id="taulukko"></table>
 
 
 <label for="teatteri">Valitse teatteri:</label>
-<select name="teatteri" id="teatteri" onchange="NIMIPUUTTUU()">
-  <option value="1029" selected>Valitse alue/teatteri</option>
-  <option value="1014">Pääkaupunkiseutu</option>
-  <option value="1012">Espoo</option>
-  <option value="1039">Espoo: OMENA</option>
-    <option value="1038">Espoo: SELLO</option>
-    <option value="1002">Helsinki</option>
-    <option value="1045">Helsinki: ITIS</option>
-<option value="1031">Helsinki: KINOPALATSI</option>
-<option value="1032">Helsinki: MAXIM</option>
+<select name="teatteri" id="teatteri" onchange="TeatterinValinta()"">
+<option value="1029" selected>Valitse alue/teatteri</option>
+<option value="1014">Pääkaupunkiseutu</option>
+<option value="1012">Espoo</option>
+<option value="1056">Espoo: OMENA</option>
+<option value="1050">Espoo: SELLO</option>
+<option value="1002">Helsinki</option>
+<option value="1058">Helsinki: ITIS</option>
+<option value="1034">Helsinki: KINOPALATSI</option>
+<option value="1047">Helsinki: MAXIM</option>
 <option value="1033">Helsinki: TENNISPALATSI</option>
-<option value="1013">Vantaa: FLAMINGO</option>
+<option value="1043">Vantaa: FLAMINGO</option>
 <option value="1015">Jyväskylä: FANTASIA</option>
 <option value="1016">Kuopio: SCALA</option>
 <option value="1017">Lahti: Kuvapalatsi</option>
-<option value="1041">Lappeenranta: S</option>
-
+<option value="1041">Lappeenranta: Strand</option>
+<option value="Oulu: PLAZA">Oulu: Plaza</option>
+<option value="Pori: PROMENADI">Pori: PROMENADI</option>
+<option value="Tampere">Tampere</option>
 
 
 </select>
+<button onclick="loadDoc()">Go</button>
 
 
+<div id="flex-container">
+    
+    <div id="tiedot"></div>
+</div>
 
 
+<table id="taulukko"></table>
+
+</div>
 
 
 
 
 
 </body>
-<script src="js.js"></script>
+<script src="script.js"></script>
 </html>

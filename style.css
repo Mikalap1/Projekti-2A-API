@@ -5,3 +5,44 @@ table,th,td {
   th,td {
     padding: 5px;
   }
+
+#flex-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+
+  /* Koko divin muotoilu */
+  #tiedot {
+    background-color: rgb(90, 190, 193);
+    height: 200px;
+    width: 100%; 
+    border-style: dashed;
+
+  }
+      /* Tekstin tietokentän muotoilu */
+  p {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+
+
+  }
+  /* Reunus kaikille kuville */
+  img {
+    padding: 10px;
+  }
+
+/* Elokuvan logon koko */
+  img#logo {
+    width:120px;
+    height:160px;
+
+
+  }
+
+input {
+    margin: .4rem 0;
+}
