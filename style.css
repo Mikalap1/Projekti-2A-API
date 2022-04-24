@@ -1,3 +1,8 @@
+header  {
+  height: 50px;
+  width: 100%;
+}
+
 table,th,td {
     border : 1px solid black;
     border-collapse: collapse;
@@ -39,10 +44,11 @@ table,th,td {
   img#logo {
     width:120px;
     height:160px;
-
-
   }
+
+
 
 input {
     margin: .4rem 0;
 }
+

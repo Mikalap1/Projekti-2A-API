@@ -17,10 +17,11 @@
         const xmlDoc = xml.responseXML;
         var x = xmlDoc.getElementsByTagName("Show");
         let tiedot = "";
+        let aika = "";
 
           // For loop joka hakee muuttujaan "tiedot" ensin Teatterin ID:n ja sitten muut tiedot
         for (var i=0; i < x.length; i++){
-        tiedot += "<div id='tiedot' class=" + 
+        tiedot += "<div id='tiedot' class=T" +
         // Haetaan TheatreID divin luokaksi ja lisätään tämä muuttujaan "tiedot"
         x[i].getElementsByTagName("TheatreID")[0].childNodes[0].nodeValue +
         "><img id='logo' style=float:left; src=" +
@@ -42,82 +43,170 @@
   
         }   //Printtaa tiedot muuttuja DIV elementtiin ID:
           document.getElementById("tiedot").innerHTML = tiedot;
+        
+          // PÄIVÄMÄÄRÄ JA AIKA
+
+        for(var i=0; i<x.length; i++) {
+          aika += "newDate(" +
+          x[i].getElementsByTagName("dttmShowStart")[0].childNodes[0].nodeValue;
+         + ")"
+          console.log(aika);
+
+          
         }
 
 
-        function TeatterinValinta() {
-          var input;
-          input = document.getElementById("teatteri").value; //Dropdown valikon numero muuttujaan
-          console.log(input); // Tulostetaan input
+        }
+
+
+              
+
+ 
+       
+
+
+          // Lisätään muotoilut luokille 1056,1050,1058,1034,1047,1038,1043
+        function addCSS1056() {
+
+          const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;
+          addCSS(`
+            #tiedot.T1056{ }
+            #tiedot.T1050{ display:none; }
+            #tiedot.T1058{ display:none; }
+            #tiedot.T1034{ display:none; }
+            #tiedot.T1047{ display:none; }
+            #tiedot.T1038{ display:none; }
+            #tiedot.T1043{ display:none; }
+            `)
+
+          }
+          function addCSS1050() {
+            const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;
+            addCSS(`
+              #tiedot.T1056{ display:none; }
+              #tiedot.T1050{  }
+              #tiedot.T1058{ display:none; }
+              #tiedot.T1034{ display:none; }
+              #tiedot.T1047{ display:none; }
+              #tiedot.T1038{ display:none; }
+              #tiedot.T1043{ display:none; }
+              `)
+            }
+            function addCSS1058() {
+              const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;
+              addCSS(`
+                #tiedot.T1056{ display:none; }
+                #tiedot.T1050{ display:none; }
+                #tiedot.T1058{  }
+                #tiedot.T1034{ display:none; }
+                #tiedot.T1047{ display:none; }
+                #tiedot.T1038{ display:none; }
+                #tiedot.T1043{ display:none; }
+                `)
+              }
+              function addCSS1034() {
+                const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;
+                addCSS(`
+                  #tiedot.T1056{ display:none; }
+                  #tiedot.T1050{ display:none; }
+                  #tiedot.T1058{ display:none; }
+                  #tiedot.T1034{  }
+                  #tiedot.T1047{ display:none; }
+                  #tiedot.T1038{ display:none; }
+                  #tiedot.T1043{ display:none; }
+                  `)
+                }        
+                function addCSS1047() {
+                  const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;
+                  addCSS(`
+                    #tiedot.T1056{ display:none; }
+                    #tiedot.T1050{ display:none; }
+                    #tiedot.T1058{ display:none; }
+                    #tiedot.T1034{ display:none; }
+                    #tiedot.T1047{ }
+                    #tiedot.T1038{ display:none; }
+                    #tiedot.T1043{ display:none; }
+                    `)
+                  }     
+                  function addCSS1038() {
+                    const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;
+                    addCSS(`
+                      #tiedot.T1056{ display:none; }
+                      #tiedot.T1050{ display:none; }
+                      #tiedot.T1058{ display:none; }
+                      #tiedot.T1034{ display:none; }
+                      #tiedot.T1047{ display:none; }
+                      #tiedot.T1038{  }
+                      #tiedot.T1043{ display:none; }
+                      `)
+                    }
+                    function addCSS1043() {
+                      const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;
+                      addCSS(`
+                        #tiedot.T1056{ display:none; }
+                        #tiedot.T1050{ display:none; }
+                        #tiedot.T1058{ display:none; }
+                        #tiedot.T1034{ display:none; }
+                        #tiedot.T1047{ display:none; }
+                        #tiedot.T1038{ display:none; }
+                        #tiedot.T1043{  }
+                        `)
+                      }    
+
+
+          function TeatterinValinta() {
+            var input;
+            input = document.getElementById("teatteri").value; //Dropdown valikon numero muuttujaan
+            input2 = parseInt(input);
+           
+            switch(input2) {
+              case 1056:
+                  var clear = document.getElementsByTagName("style")[0]; // Haetaan aikaisempi style tagi
+                  clear.remove(); // Poistetaan style tagi
+                  addCSS1056(); // Lisää uudeen style tagin
+                break;
+              case 1050:
+                var clear = document.getElementsByTagName("style")[0];
+                clear.remove();
+                addCSS1050();
+                break;
+              case 1058:
+                var clear = document.getElementsByTagName("style")[0];
+                clear.remove();
+                addCSS1058();
+                break;
+              case 1034:
+                var clear = document.getElementsByTagName("style")[0];
+                clear.remove();
+                addCSS1034();
+                break;
+              case 1047:
+                var clear = document.getElementsByTagName("style")[0];
+                clear.remove();
+                addCSS1047();
+                break;
+              case 1038:
+                var clear = document.getElementsByTagName("style")[0];
+                clear.remove();
+                addCSS1038();
+                break;
+              case 1043:
+                var clear = document.getElementsByTagName("style")[0];
+                clear.remove();
+                addCSS1043();
+                break;
+
+            }    
           }
 
-        /* filter = input.value.toString();
-            table = document.getElementById("tiedot");
-            p = table.getElementsByTagName("p");
-            for (i = 0; i < p.length; i++) {
-              td = p[i].getElementsByTagName("p");
-              console.log(td);
-              if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue == td) {
-                  table[i].style.display = "";
-                } else {
-                  table[i].style.display = "none";
-              }}}
-        }         */
-
-
-      //  var printtaa = title[i].innerHTML;
-    
-
-      //  document.getElementById("print").innerHTML = printtaa;
-
-        /* var i;
-          const xmlDoc = xml.responseXML;
-          const x = xmlDoc.getElementsByTagName("Show");
-          for (let i = 0; i <x.length; i++) 
-          x[i].getElementsByTagName("Title").innerHTML;
-          console.log(x[i]);
-          console.log(x);
         
-                          /* KOEAJO x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue.innerHTML;    */
 
-          /*
-          const starttime = xmlDoc.getElementsByTagName("dttmShowStart")[0].childNodes[0].nodeValue;
 
-          let table="<tr><th>Kuva</th><th>Nimi</th><th>TheatreID</th><th>Show Starttime</th></tr>"; // TH style=display:none
-            {
-          for (let i = 0; i <x.length; i++) {
-            table += "<tr><td>" +
-            x[i].getElementsByTagName("EventSmallImagePortrait")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-            "</td><td>" +       //TD style=display:none
-            x[i].getElementsByTagName("TheatreID")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[i].getElementsByTagName("dttmShowStart")[0].childNodes[0].nodeValue +
-            "</td></tr>";
-            
-      
-        }
-        document.getElementById("taulukko").innerHTML = table;
-      }}
 
-     // Dropdown menun teatteri valitaan ja taulukko tulostaa valinnan
-      function TeatterinValinta() {
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("teatteri");
-        filter = input.value.toUpperCase();
-          table = document.getElementById("taulukko");
-          tr = table.getElementsByTagName("tr");
-          for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[2];
-            if (td) {
-              txtValue = td.textContent || td.innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-            }}} */
+
+            // Ladataan XML sivun käynnistyessä
+          function aloitus() { loadDoc() }
+
+          window.onload = aloitus();
 
         
