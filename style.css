@@ -7,7 +7,7 @@ header  {
   width: 100%;
 }
 
-.animated-background {
+#animated-background {
     background: linear-gradient(
       to right, #833ab4,
       #fd1d1d, #fcb045);
