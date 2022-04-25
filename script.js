@@ -17,7 +17,7 @@
         const xmlDoc = xml.responseXML;
         var x = xmlDoc.getElementsByTagName("Show");
         let tiedot = "";
-        let aika = "";
+        let kuva = "";
 
           // For loop joka hakee muuttujaan "tiedot" ensin Teatterin ID:n ja sitten muut tiedot
         for (var i=0; i < x.length; i++){
@@ -46,14 +46,9 @@
         
           // PÄIVÄMÄÄRÄ JA AIKA
 
-        for(var i=0; i<x.length; i++) {
-          aika += "newDate(" +
-          x[i].getElementsByTagName("dttmShowStart")[0].childNodes[0].nodeValue;
-         + ")"
-          console.log(aika);
 
           
-        }
+        
 
 
         }

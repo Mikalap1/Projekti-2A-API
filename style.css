@@ -1,12 +1,16 @@
-body, header {
+body, .box {
 font-family: 'Rubik Mono One', sans-serif;
 }
   
-header  {
+
+/* Otsikko div */
+.box  {
   height: 50px;
   width: 100%;
 }
 
+
+/* Animoitu taustakuva */
 #animated-background {
     background: linear-gradient(
       to right, #833ab4,
@@ -75,7 +79,47 @@ table,th,td {
 
 
 
-input {
-    margin: .4rem 0;
+
+
+.box {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.box select {
+  background-color: #833ab4;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 5px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
