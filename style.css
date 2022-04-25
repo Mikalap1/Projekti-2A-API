@@ -41,10 +41,13 @@ table,th,td {
 
   /* Koko divin muotoilu */
   #tiedot {
-    background-color: rgb(90, 190, 193);
     height: 200px;
     width: 100%; 
-    border-style: dashed;
+      border-top-style: solid;
+    border-right-style: none;
+   border-bottom-style: solid;
+   border-left-style: none;
+    border-radius: 8px;
 
   }
       /* Tekstin tietokentän muotoilu */
